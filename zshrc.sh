@@ -51,7 +51,7 @@ setopt 		inc_append_history
 #-----------------------
 #プラグイン設定
 #-----------------------
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 -
 
 # ANSIエスケープコード
@@ -62,7 +62,11 @@ BLUE='%F{blue}'     # 青色
 RESET='%f'          # 色のリセット
 
 # 任意の文字列 (例: 環境名や注意書き)
-ENVIRONMENT="Conoha-Ubuntu1"
+ENVIRONMENT="MacMini"
 
 # PS1設定: 任意の文字列を追加
 export PS1="${GREEN}%n${RESET}@${BLUE}%m${RESET} ${YELLOW}${ENVIRONMENT}${RESET} [%~] %# "
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
+
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources

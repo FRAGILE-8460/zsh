@@ -52,6 +52,7 @@ setopt 		inc_append_history
 #プラグイン設定
 #-----------------------
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 -
 
 # ANSIエスケープコード

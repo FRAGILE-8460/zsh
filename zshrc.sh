@@ -16,7 +16,6 @@ setopt		correct
 bindkey		-v
 
 #GIT拡張
-autoload -Uz compinit && compinit
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
@@ -26,7 +25,7 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%b'
 
 # プロンプト変更
-PROMPT='%{$fg[cyan]%}%n@%m%{$reset_color%} [%c] : '
+# PROMPT='%{$fg[cyan]%}%n@%m%{$reset_color%} [%c] : '
 
 
 #-------------------------
@@ -53,7 +52,6 @@ setopt 		inc_append_history
 #-----------------------
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
--
 
 # ANSIエスケープコード
 RED='%F{red}'       # 赤色
@@ -71,3 +69,10 @@ export PS1="${GREEN}%n${RESET}@${BLUE}%m${RESET} ${YELLOW}${ENVIRONMENT}${RESET}
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
 
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
+
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/takashi/.docker/completions $fpath)
+# End of Docker CLI completions
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"

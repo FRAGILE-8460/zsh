@@ -2,9 +2,10 @@
 
 # PATH
 # Zshのpath配列を使うと、より安全で管理がしやすい
-# 下に追加するほど、優先的に使われる
+# 上に追加するほど、優先的に使われる
 path=(
   /opt/homebrew/sbin
+  /opt/homebrew/bin
   /opt/homebrew/opt/llvm/bin
   /Users/takashi/tools/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin
   $path # 既存のPATHを引き継ぐ

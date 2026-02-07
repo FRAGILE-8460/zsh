@@ -22,7 +22,11 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
-zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:git:*' formats '%b%c%u'
+zstyle ':vcs_info:git:*' actionformats '%b%c%u'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '*'
+zstyle ':vcs_info:git:*' stagedstr '+'
 
 # プロンプト変更
 # PROMPT='%{$fg[cyan]%}%n@%m%{$reset_color%} [%c] : '
@@ -31,6 +35,9 @@ zstyle ':vcs_info:git:*' formats '%b'
 #-------------------------
 # 履歴
 #-------------------------
+if [ ! -d "$HOME/log" ]; then
+    mkdir -p "$HOME/log"
+fi
 HISTFILE=$HOME/log/zsh-history
 HISTSIZE=100000
 SAVEHIST=1000000
@@ -66,13 +73,4 @@ ENVIRONMENT="MacMini"
 # PS1設定: 任意の文字列を追加
 export PS1="${GREEN}%n${RESET}@${BLUE}%m${RESET} ${YELLOW}${ENVIRONMENT}${RESET} [%~] %# "
 
-export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
 
-export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
-
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/takashi/.docker/completions $fpath)
-# End of Docker CLI completions
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"

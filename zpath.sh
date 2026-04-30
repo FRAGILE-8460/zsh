@@ -1,22 +1,22 @@
-# zpath.sh
-
-# PATH
-# Zshのpath配列を使うと、より安全で管理がしやすい
-# 上に追加するほど、優先的に使われる
+# PATH (上に追加するほど優先度が高い)
 path=(
   /opt/homebrew/sbin
   /opt/homebrew/bin
   /opt/homebrew/opt/llvm/bin
-  /Users/takashi/tools/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin
-  $path # 既存のPATHを引き継ぐ
+  $HOME/tools/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin
+  $HOME/.local/bin
+  $path
 )
 
-# fpath (補完関数のパス)
-# 下に追加するほど、優先的に使われる
+# fpath (下に追加するほど優先度が高い)
 fpath=(
-  /Users/takashi/.docker/completions
-  $fpath # 既存のfpathを引き継ぐ
+  $HOME/.docker/completions
+  $fpath
 )
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && path=($PYENV_ROOT/bin $path)
 
 # STM32
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin

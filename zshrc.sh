@@ -67,7 +67,8 @@ export PS1="${GREEN}%n${RESET}@${BLUE}%m${RESET} ${YELLOW}${ENVIRONMENT}${RESET}
 eval "$(op completion zsh)"; compdef _op op
 source ~/.config/op/plugins.sh
 
-#-------------------------
-# pyenv
-#-------------------------
-eval "$(pyenv init -)"
+# Added by Antigravity CLI installer
+export PATH="/Users/takashi/.local/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/takashi/.antigravity-ide/antigravity-ide/bin:$PATH"

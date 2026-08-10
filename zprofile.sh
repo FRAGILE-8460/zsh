@@ -6,7 +6,3 @@ source "$HOME/ZSH/zpath.sh"
 
 # OrbStack
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
-
-# Added by Antigravity CLI installer
-export PATH="/Users/takashi/.local/bin:$PATH"

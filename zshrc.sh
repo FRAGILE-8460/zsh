@@ -67,8 +67,5 @@ export PS1="${GREEN}%n${RESET}@${BLUE}%m${RESET} ${YELLOW}${ENVIRONMENT}${RESET}
 eval "$(op completion zsh)"; compdef _op op
 source ~/.config/op/plugins.sh
 
-# Added by Antigravity CLI installer
-export PATH="/Users/takashi/.local/bin:$PATH"
-
-# Added by Antigravity IDE
-export PATH="/Users/takashi/.antigravity-ide/antigravity-ide/bin:$PATH"
+# Claude mcp config
+alias claude="claude --mcp-config ~/.claude_mcp.json"

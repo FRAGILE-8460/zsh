@@ -1,3 +1,6 @@
+# path/fpath の重複を自動排除
+typeset -U path fpath
+
 # PATH (上に追加するほど優先度が高い)
 path=(
   /opt/homebrew/sbin
@@ -5,6 +8,7 @@ path=(
   /opt/homebrew/opt/llvm/bin
   $HOME/tools/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin
   $HOME/.local/bin
+  $HOME/.antigravity-ide/antigravity-ide/bin
   $path
 )
 
